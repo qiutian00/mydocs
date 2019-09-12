@@ -1,0 +1,47 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="X-UA-Compatible" content="ie=edge"><title>主配置文件说明 - 欢迎使用Teadocs文档生成系统</title><meta name="description" content="菜单的配置文件是你文档根目录下面的 teadocs.config.js，它是一个javascript的文件。"><meta name="keywords" content="主配置文件说明 - 欢迎使用Teadocs文档生成系统"><script src="/mydocs/static/js/jquery-3.3.1.min.js"></script><script src="/mydocs/static/js/vue.min.js"></script><link rel="stylesheet" href="/mydocs/static/css/normalize.min.css"><link rel="stylesheet" href="/mydocs/static/css/monaco.css"><link rel="stylesheet" href="/mydocs/static/css/loading.css"><link rel="stylesheet" href="/mydocs/static/css/editormd.min.css"><link rel="stylesheet" href="/mydocs/static/css/style.css"><link rel="stylesheet" href="/mydocs/static/css/mobile.css"><link rel="stylesheet" href="/mydocs/static/font-awesome-4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="/mydocs/static/css/highlight.default.min.css"><script src="/mydocs/static/js/highlight.min.js"></script><script>window._CONST={ROOT_PATH:"/mydocs/"},hljs.initHighlightingOnLoad()</script></head><body><div class="main"><div class="tea-menu"><div class="tea-menu-title"><i class="fa fa-home" aria-hidden="true"></i> <span>欢迎使用Teadocs文档生成系统</span></div><div class="tea-menu-search-warp"><i class="fa fa-search"></i> <input type="text" placeholder="搜索文档" value height="100%"></div><ul class="tea-menu-list"><li><a href="/mydocs/index.html" title="介绍" class>介绍</a></li><li><a href="/mydocs/quick_start.html" title="快速入门" class>快速入门</a></li><li><a href="/mydocs/install.html" title="安装" class>安装</a></li><li><a title="配置介绍" class="active">配置介绍<i class="fa fa-angle-down unfold"></i></a><ul class="unfold"><li><a href="/mydocs/config/structure.html" title="文档目录结构介绍" class>文档目录结构介绍</a></li><li><a href="/mydocs/config/main.html" title="主配置文件说明" class="active">主配置文件说明</a></li><li><a href="/mydocs/config/nav.html" title="菜单配置文件说明">菜单配置文件说明</a></li></ul></li><li><a href="/mydocs/template_markdown.html" title="markdown模版">markdown模版</a></li><li><a href="/mydocs/custom_theme.html" title="自定义主题">自定义主题</a></li><li><a href="/mydocs/deploy.html" title="部署">部署</a></li></ul><div class="tea-version"><p>version: 0.0.1</p><p>Built with <a href="https://github.com/lisniuse/teadocs" target="_blank">Teadocs</a></p></div></div><div class="tea-content"><div class="tea-nav"><h3 class="top-title" style="font-weight:500;margin:0;font-size:16px"><i class="fa fa-navicon" aria-hidden="true"></i> <span>主配置文件说明</span></h3></div><div class="tea-container"><article class="markdown-body"><h1 id="主配置文件说明"><a href="#主配置文件说明" class="header-anchor">#</a> <span>主配置文件说明</span></h1><p>菜单的配置文件是你文档根目录下面的 <code>teadocs.config.js</code>，它是一个javascript的文件。</p><p>主配置文件的所有配置项都不是必填你完全可以什么也不填写，它的代码如下：</p><pre class="prettyprint language-javascript"><code>'use strict';
+const path = require('path')
+
+module.exports = {
+    doc: {
+        name: "", //文档名称
+        description: "", //文档的描述
+        version: "", //文档的版本
+        dir: "", //文档的目录
+        outDir: "", //文档编译成html时输出的目录
+        staticDir: "" //文档所用到的静态文件的地址
+    }, 
+    theme: {
+        dir: "", //主题的目录，可自定义主题
+        title: "", //html的title标签
+        headHtml: "", //html head 的代码
+        footHtml: "", //html 底部 的代码
+        isMinify: true, //是否为输出的html启用压缩
+        rootPath: "/" //表示根路径，如果部署在深目录下面，这个配置项必填，不然会出现找不到资源路径的错误。
+    },
+    nav: {
+        tree: "./tree"
+    }
+}</code></pre><h2 id="默认配置"><a href="#默认配置" class="header-anchor">#</a> <span>默认配置</span></h2><pre class="prettyprint language-javascript"><code>module.exports = {
+    doc: {
+        name: "欢迎使用Teadocs文档生成系统",
+        description: "欢迎使用Teadocs文档生成系统",
+        version: "0.0.1",
+        dir: "./docs",
+        outDir: "./build",
+        staticDir: "./static"
+    },
+    theme: {
+        dir: __dirname + '/../themes/default',
+        title: "欢迎使用Teadocs文档生成系统",
+        headHtml: `
+        &lt;meta name="description" content="欢迎使用Teadocs文档生成系统" /&gt;
+        &lt;meta name="keywords" content="teadocs, 文档生成器" /&gt;
+        `,
+        footerHtml: "",
+        isMinify: false,
+        rootPath: "/"
+    },
+    nav: {
+        tree: "&lt;ul&gt;&lt;li&gt;&lt;a&gt;欢迎使用Teadocs文档生成系统&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;"
+    }
+}</code></pre></article></div></div><i class="fa fa-arrow-circle-up gotop" aria-hidden="true"></i><div id="menu-mask"></div></div><script src="/mydocs/static/js/main.js"></script><script src="/mydocs/static/js/mobile.js"></script></body></html>
